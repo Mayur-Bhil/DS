@@ -5,7 +5,6 @@ public class Demo {
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
         ArrayList<String> strlist = new ArrayList<>();
-        ArrayList<Boolean>List3 = new ArrayList<>();
         list.add(1);
         list.add(25);
         list.add(32);
