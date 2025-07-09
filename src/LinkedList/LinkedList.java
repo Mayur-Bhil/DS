@@ -40,15 +40,15 @@ public class LinkedList {
  public void print(){
     Node temp = head;
     while (temp != null) {
-        System.out.println(temp.data+ "");
+        System.out.print(temp.data+ " -> ");
         temp = temp.next;
     } 
-    System.out.println("null");
+    System.out.print(" null " + "->");
  }
  
 public void add(int idx,int data){
     if(idx == 0){
-        addFirst(data);
+        addFirst(data); 
         return;
     }
     Node newnode = new Node(data);
@@ -88,7 +88,7 @@ public int removeLast(){
         return val;
     }
     Node prev = head;
-    for(int  i =0;i<size-2;i++){
+    for(int  i =0;i<size-i+1;i++){
         prev = prev.next;
     }
     int val = prev.next.data;
@@ -96,6 +96,21 @@ public int removeLast(){
     tail  = prev;
     size --;
     return val;
+}
+
+public int itrSearch(int key){
+    Node temp = head; 
+    int i = 0 ;
+
+    while (temp != null) {
+           if (temp.data == key) {
+                return i;
+           } 
+           temp = temp.next;
+           i++;
+    }
+    return -1;
+
 }
 
     public static void main(String[] args) {
@@ -106,6 +121,7 @@ public int removeLast(){
         ll.addLast(4);
         ll.add(2, 9);
         ll.print();
-        System.out.println(ll.size);
+        System.out.println(ll.itrSearch(3));
+        System.out.println(ll.itrSearch(3));
     }
 }
